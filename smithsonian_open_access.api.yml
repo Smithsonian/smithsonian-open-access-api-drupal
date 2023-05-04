@@ -1,0 +1,212 @@
+openapi: 3.0.0
+info:
+  title: Smithsonian Open Access API
+  version: 1.0.0
+  description: This is the API documentation for the Smithsonian Open Access Drupal module.
+paths:
+  /smithsonian_open_access/search:
+    get:
+      summary: Search the Smithsonian Open Access API
+      description: Search the API using a query and optional parameters.
+      parameters:
+        - name: query
+          in: query
+          description: The search query to use for the search.
+          required: true
+          schema:
+            type: string
+        - name: start
+          in: query
+          description: The start index for the search results.
+          required: false
+          schema:
+            type: integer
+            default: 0
+        - name: rows
+          in: query
+          description: The number of rows to return in the response.
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+            maximum: 1000
+        - name: sort
+          in: query
+          description: The sort order for the search results.
+          required: false
+          schema:
+            type: string
+        - name: online_only
+          in: query
+          description: Set to true to return only results with online visual material.
+          required: false
+          schema:
+            type: boolean
+            default: false
+        - name: additional_filters
+          in: query
+          description: Additional filter queries for the search.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        200:
+          description: A successful search response.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      numFound:
+                        type: integer
+                      start:
+                        type: integer
+                      docs:
+                        type: array
+                        items:
+                          type: object
+        400:
+          description: A bad request error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  /smithsonian_open_access/category_search:
+    get:
+      summary: Search within a specific category
+      description: Perform a search within a specific category using a query.
+      parameters:
+        - name: query
+          in: query
+          description: The search query to use for the search within the category.
+          required: true
+          schema:
+            type: string
+        - name: category
+          in: query
+          description: The category to search within.
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: A successful category search response.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      numFound:
+                        type: integer
+                      start:
+                        type: integer
+                      docs:
+                        type: array
+                        items:
+                          type: object
+        400:
+          description: A bad request error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  /smithsonian_open_access/terms_search:
+    get:
+      summary: Search for a specific term
+      description: Perform a terms search for a specific term.
+      parameters:
+        - name: category
+          in: query
+          description: The term category to search for.
+          required: true
+          schema:
+            type: string
+        - name: starts_with
+          in: query
+          description: The optional string prefix filter.
+          required: false
+          schema:
+            type: string
+      responses:
+        200:
+          description: A successful terms search response.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      numFound:
+                        type: integer
+                      start:
+                        type: integer
+                      docs:
+                        type: array
+                        items:
+                          type: object
+        400:
+          description: A bad request error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  /smithsonian_open_access/get_stats:
+    get:
+      summary: Get statistics from the API
+      description: Retrieve statistics from the Smithsonian Open Access API.
+      responses:
+        200:
+          description: A successful statistics response.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      total_records:
+                        type: integer
+                      total_images:
+                        type: integer
+                      total_videos:
+                        type: integer
+                      total_audio:
+                        type: integer
+                      total_3d:
+                        type: integer
+                      total_2d:
+                        type: integer
+                      total_text:
+                        type: integer
+                      total_other:
+                        type: integer
+        400:
+          description: A bad request error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string

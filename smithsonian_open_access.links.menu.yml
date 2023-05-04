@@ -1,0 +1,23 @@
+smithsonian_open_access.parent:
+  title: 'Smithsonian Open Access'
+  description: 'Configure the Smithsonian Open Access modules.'
+  parent: system.admin_config
+  route_name: '<nolink>'
+  menu_name: admin
+  weight: -1
+
+smithsonian_open_access.settings:
+  title: 'Configure API'
+  description: 'Enter Smithsonian Open Access API Credentials.'
+  parent: smithsonian_open_access.parent
+  route_name: smithsonian_open_access.settings
+  menu_name: admin
+  weight: -50
+
+smithsonian_open_access.test_search:
+  title: 'Test Search API'
+  parent: smithsonian_open_access.parent
+  description: 'Test the Smithsonian Open Access API search functionality.'
+  route_name: smithsonian_open_access.search_test
+  menu_name: admin
+  weight: -49
