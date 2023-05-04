@@ -34,7 +34,7 @@ To use the API wrapper class in your custom code, you can follow these steps:
 Refer to the module's source code for more examples and details on using the API wrapper class.
 
 ## Contributing
-Submit bug reports, feature requests, and other issues to the Druapl
+Submit bug reports, feature requests, and other issues to the Drupal.org issue queue for this module: [https://www.drupal.org/project/smithsonian_open_access/issues](https://www.drupal.org/project/smithsonian_open_access/issues).
 
 ## API Documentation
 
