@@ -5,6 +5,7 @@
       <change afterPath="$PROJECT_DIR$/css/smithsonian_open_access.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/js/form_behaviors.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/smithsonian_open_access.libraries.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smithsonian_open_access.api.yml" beforeDir="false" afterPath="$PROJECT_DIR$/smithsonian_open_access.api.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smithsonian_open_access.info.yml" beforeDir="false" afterPath="$PROJECT_DIR$/smithsonian_open_access.info.yml" afterDir="false" />
@@ -108,7 +109,7 @@
       <workItem from="1682868672880" duration="145000" />
       <workItem from="1682868866616" duration="1042000" />
       <workItem from="1683030287002" duration="2624000" />
-      <workItem from="1683121995550" duration="12046000" />
+      <workItem from="1683121995550" duration="13128000" />
     </task>
     <task id="LOCAL-00001" summary="Set Guzzle to 6">
       <created>1678483075494</created>

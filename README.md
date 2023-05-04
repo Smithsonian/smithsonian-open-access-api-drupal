@@ -1,6 +1,6 @@
 # Smithsonian Open Access Drupal Module
 
-The Smithsonian Open Access module provides a simple and convenient way to interact with the Smithsonian Open Access API in your Drupal site. It allows you to search the API, customize the search results using various parameters, and display the JSON data on the screen.
+The Smithsonian Open Access Drupal module provides a simple and convenient way to interact with the Smithsonian Open Access API in your Drupal site. It allows you to search the API, customize the search results using various parameters, and display the JSON data on the screen.
 
 ## Features
 
@@ -11,13 +11,13 @@ The Smithsonian Open Access module provides a simple and convenient way to inter
 
 ## Installation
 
-1. Download the `smithsonian_open_access` module and place it in the `/modules/custom` directory of your Drupal site. If yu cloned the repository, make sure the name of the module directory is `smithsonian_open_access`.
+1. Download the `smithsonian_open_access` module and place it in the `/modules/custom` directory of your Drupal site. If you cloned the repository, make sure the name of the module directory is `smithsonian_open_access`.
 2. Enable the module using the Drupal admin interface or by running `drush en smithsonian_open_access` in the command line.
 
 ## Configuration
 
 1. Navigate to the module configuration page at `/admin/config/smithsonian-open-access`.
-2. Enter your Smithsonian Open Access API key and customize other settings if necessary.
+2. Enter your Smithsonian Open Access API key and customize other settings if necessary. To obtain an API key for the Smithsonian Open Access API, visit [data.gov](https://api.data.gov/signup/).
 3. Click the "Test API Key" button to verify the validity of your API key.
 4. Save the configuration.
 
@@ -26,7 +26,6 @@ The Smithsonian Open Access module provides a simple and convenient way to inter
 To use the search form provided by the module, navigate to `/admin/config/content/smithsonian-open-access/search-test`. Enter a search phrase and click the "Search" button to display the JSON data returned by the API.
 
 To use the API wrapper class in your custom code, you can follow these steps:
-
 1. Import the `Api` class: `use Drupal\smithsonian_open_access\Api;`
 2. Inject the `Api` class as a dependency in your custom class or service.
 3. Call the `search()` method of the `Api` class to perform a search query.
@@ -35,7 +34,11 @@ Refer to the module's source code for more examples and details on using the API
 
 ## API Documentation
 
-The `smithsonian_open_access.api.yml` file in the module's root directory provides an OpenAPI specification for the module's API. You can use this file to generate API documentation or provide it to other developers for easier integration.
+The Smithsonian Open Access API provides access to millions of digital images and data from the Smithsonian's collections. To learn more about the API, visit the [Open Access API documentation](https://edan.si.edu/openaccess/apidocs/). The documentation includes information about available fields, departments, data types, and endpoints.
+
+## Smithsonian Open Access Program
+
+The Smithsonian Open Access Program promotes the sharing and reusing of digital assets from the Smithsonian's collections. You can explore and access the collection data via the [Open Access GitHub repository](https://github.com/your-github-repository-link). The repository contains detailed documentation and the data formatted in JSON. Please note that the Smithsonian does not support pull requests for this repository. The data in the repository is refreshed on a weekly basis, so it's recommended to check often for the latest revisions.
 
 ## License and Content
 
