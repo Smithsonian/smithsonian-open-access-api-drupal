@@ -26,11 +26,15 @@ The Smithsonian Open Access Drupal module provides a simple and convenient way t
 To use the search form provided by the module, navigate to `/admin/config/content/smithsonian-open-access/search-test`. Enter a search phrase and click the "Search" button to display the JSON data returned by the API.
 
 To use the API wrapper class in your custom code, you can follow these steps:
+
 1. Import the `Api` class: `use Drupal\smithsonian_open_access\Api;`
 2. Inject the `Api` class as a dependency in your custom class or service.
 3. Call the `search()` method of the `Api` class to perform a search query.
 
 Refer to the module's source code for more examples and details on using the API wrapper class.
+
+## Contributing
+Submit bug reports, feature requests, and other issues to the Druapl
 
 ## API Documentation
 

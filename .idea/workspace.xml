@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9aa9940-5eb9-4454-b575-480972972bd0" name="Changes" comment="converting to configFactory, adding API.php">
-      <change afterPath="$PROJECT_DIR$/css/smithsonian_open_access.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/form_behaviors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smithsonian_open_access.libraries.yml" afterDir="false" />
+    <list default="true" id="a9aa9940-5eb9-4454-b575-480972972bd0" name="Changes" comment="Update README.md to include more information about signing up for an API Key, API documentation, and GitHub metadata repository.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smithsonian_open_access.api.yml" beforeDir="false" afterPath="$PROJECT_DIR$/smithsonian_open_access.api.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smithsonian_open_access.info.yml" beforeDir="false" afterPath="$PROJECT_DIR$/smithsonian_open_access.info.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smithsonian_open_access.routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/smithsonian_open_access.routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Api.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/SmithsonianOpenAccessSettingsForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SmithsonianOpenAccessSettingsForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/SmithsonianOpenAccessTestForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SmithsonianOpenAccessTestForm.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +17,39 @@
     <drupalPath>$PROJECT_DIR$/../../../</drupalPath>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -109,7 +133,7 @@
       <workItem from="1682868672880" duration="145000" />
       <workItem from="1682868866616" duration="1042000" />
       <workItem from="1683030287002" duration="2624000" />
-      <workItem from="1683121995550" duration="13128000" />
+      <workItem from="1683121995550" duration="13983000" />
     </task>
     <task id="LOCAL-00001" summary="Set Guzzle to 6">
       <created>1678483075494</created>
@@ -160,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678831494496</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update README.md to include more information about signing up for an API Key, API documentation, and GitHub metadata repository.">
+      <created>1683215584614</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683215584614</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +213,8 @@
     <MESSAGE value="Simplify Code for API settings." />
     <MESSAGE value="Add a Search Test Form" />
     <MESSAGE value="converting to configFactory, adding API.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="converting to configFactory, adding API.php" />
+    <MESSAGE value="Update README.md to include more information about signing up for an API Key, API documentation, and GitHub metadata repository." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md to include more information about signing up for an API Key, API documentation, and GitHub metadata repository." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
