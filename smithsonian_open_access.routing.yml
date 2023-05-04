@@ -1,0 +1,15 @@
+smithsonian_open_access.settings:
+  path: '/admin/config/smithsonian-open-access'
+  defaults:
+    _form: 'Drupal\smithsonian_open_access\Form\SmithsonianOpenAccessSettingsForm'
+    _title: 'Smithsonian Open Access API Settings'
+  requirements:
+    _permission: 'administer site configuration'
+smithsonian_open_access.search_test:
+  path: '/admin/config/content/smithsonian-open-access/search-test'
+  defaults:
+    _form: 'Drupal\smithsonian_open_access\Form\SmithsonianOpenAccessTestForm'
+    _title: 'Test Smithsonian Open Access API'
+  requirements:
+    _permission: 'administer site configuration'
+

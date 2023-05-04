@@ -1,0 +1,8 @@
+name: 'SI Open Access: Data.gov API Integration'
+description: |
+  Provides integration with the Smithsonian Open Access API at Data.gov.
+  This module allows you to connect and interact with the API to access and retrieve data from the Smithsonian Institution's Open Access collection.
+package: 'Smithsonian Institution: Open Access'
+type: module
+core_version_requirement: ^9 || ^10
+version: '1.0'

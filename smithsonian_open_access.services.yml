@@ -1,0 +1,4 @@
+services:
+  smithsonian_open_access.api:
+    class: Drupal\smithsonian_open_access\Api
+    arguments: ['@config.factory', '@http_client', '@logger.channel.default']

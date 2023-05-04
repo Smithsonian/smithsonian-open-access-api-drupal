@@ -1,0 +1,10 @@
+form_behaviors:
+  version: 1.x
+  css:
+    component:
+      css/smithsonian_open_access.css: {}
+  js:
+    js/form_behaviors.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
