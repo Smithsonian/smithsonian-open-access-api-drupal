@@ -76,12 +76,14 @@ class Api {
    *
    * @throws \GuzzleHttp\Exception\RequestException
    */
-  public function search($query, $start = 0, $rows = 10, $sort = 'relevancy', $type = 'edanmdm', $row_group = 'objects', $online_only = FALSE, $additional_filters = []) {
+  public function search($query, $start = 0, $rows = 10, $sort = 'relevancy', $type = 'edanmdm', $row_group = 'objects', $images_only = TRUE, $additional_filters = []) {
     try {
       $config = $this->configFactory->get('smithsonian_open_access.settings');
+      $query = urlencode($query);
+      $images_only = $images_only ? ' AND online_visual_material:true' : null;
 
       $params = [
-        'q' => $query,
+        'q' => $query . $images_only,
         'start' => $start,
         'rows' => $rows,
         'api_key' => $config->get('api_key'),
@@ -106,10 +108,6 @@ class Api {
         $params['row_group'] = $row_group;
       } else {
         $this->logger->warning('Invalid row_group value: @row_group. Allowed values: ' . implode(', ', $allowed_row_group_values), ['@row_group' => $row_group]);
-      }
-
-      if ($online_only) {
-        $params['online_only'] = 'true';
       }
 
       if (!empty($additional_filters)) {

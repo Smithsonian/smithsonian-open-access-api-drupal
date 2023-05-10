@@ -147,14 +147,9 @@ class SmithsonianOpenAccessTestForm extends FormBase {
     }
 
   public function ajaxSearch(array $form, FormStateInterface $form_state) {
-    \Drupal::logger('smithsonian_open_access')->notice('ajaxSearch executed');
 
     $endpoint = $form_state->getValue('endpoint');
     $query = $form_state->getValue('query');
-
-    // Add the filter query to include only images
-    $fq = ' AND online_visual_material:true';
-    $query .= $fq;
 
     // Set other parameters
     $start = 0;
@@ -183,13 +178,10 @@ class SmithsonianOpenAccessTestForm extends FormBase {
         $results = $this->api->termsSearch($form_state->getValue('term'));
         break;
     }
-    \Drupal::logger('smithsonian_open_access')->notice('Search results:', ['results' => $results]);
-    \Drupal::logger('smithsonian_open_access')->notice('Search results: @results', ['@results' => print_r($results, TRUE)]);
-
 
     if ($results) {
       $results_json = json_encode($results, JSON_PRETTY_PRINT);
-      $form['results']['#value'] = '<pre>' . $this->t('Search results:') . "\n" . $results_json . '</pre>';
+      $form['results']['#value'] = $results_json;
     } else {
       $form['results']['#value'] = $this->t('No results found.');
     }
