@@ -152,10 +152,6 @@ class SmithsonianOpenAccessTestForm extends FormBase {
     $endpoint = $form_state->getValue('endpoint');
     $query = $form_state->getValue('query');
 
-    // Add the filter query to include only images
-    $fq = ' AND online_visual_material:true';
-    $query .= $fq;
-
     // Set other parameters
     $start = 0;
     $rows = 25;
@@ -189,7 +185,7 @@ class SmithsonianOpenAccessTestForm extends FormBase {
 
     if ($results) {
       $results_json = json_encode($results, JSON_PRETTY_PRINT);
-      $form['results']['#value'] = '<pre>' . $this->t('Search results:') . "\n" . $results_json . '</pre>';
+      $form['results']['#value'] = $results_json;
     } else {
       $form['results']['#value'] = $this->t('No results found.');
     }
