@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection ALL */
 
 
 namespace Drupal\smithsonian_open_access;
@@ -136,19 +136,39 @@ class Api {
    * @throws \GuzzleHttp\Exception\RequestException
    */
   public function getContent($id) {
-    try {
-      $config = $this->configFactory->get('smithsonian_open_access.settings');
-      $response = $this->client->request('GET', $config->get('base_uri') . $config->get('content_endpoint') . '/' . $id, [
-        'query' => [
-          'api_key' => $config->get('api_key'),
-        ],
-      ]);
-      return json_decode($response->getBody(), TRUE);
-    } catch (RequestException $e) {
-      throw new RequestException("Error in getContent: " . $e->getMessage(), $e->getRequest());
+
+    // Occasionally, the API returns a 404 error when fetching a record, this method now retries up to 3 times before failing.
+    $maxAttempts = 3;
+    $attempt = 0;
+
+    while ($attempt < $maxAttempts) {
+      try {
+        $config = $this->configFactory->get('smithsonian_open_access.settings');
+        $response = $this->client->request('GET', $config->get('base_uri') . $config->get('content_endpoint') . '/' . $id, [
+          'query' => [
+            'api_key' => $config->get('api_key'),
+          ],
+        ]);
+
+        return json_decode($response->getBody(), TRUE);
+
+      } catch (RequestException $e) {
+        if ($e->hasResponse() && $e->getResponse()->getStatusCode() == 404) {
+          $attempt++;
+          \Drupal::Logger('smithsonian_open_access')->warning('Error in getContent fetching record, trying again (@attempt): @error', ['@attempt'=>$attempt, '@error' => $e->getMessage()]);
+
+          if ($attempt == $maxAttempts) {
+            // If all attempts failed, then throw the exception.
+            throw new RequestException("Error in getContent after $maxAttempts attempts: " . $e->getMessage(), $e->getRequest());
+          }
+          sleep(1); // Add a delay before retrying
+        } else {
+          // If the exception is not a 404, re-throw it immediately
+          throw new RequestException("Error in getContent: " . $e->getMessage(), $e->getRequest());
+        }
+      }
     }
   }
-
 
   /**
    * Retrieves statistics from the API.
@@ -171,7 +191,6 @@ class Api {
       throw new RequestException("Error in getStats: " . $e->getMessage(), $e->getRequest());
     }
   }
-
 
   /**
    * Performs a search within a specific category.
